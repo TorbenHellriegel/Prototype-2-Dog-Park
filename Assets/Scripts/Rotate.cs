@@ -10,6 +10,7 @@ public class Rotate : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Set random initial vlaues determining the rotation speed and direction
         rotationSpeed = Random.Range(300, 700);
         rotationDirection = (Random.Range(0, 2) - 0.5f) * 2;
         transform.Rotate(Vector3.up * Random.Range(0, 360));
@@ -18,6 +19,7 @@ public class Rotate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Rotate the game object
         transform.Rotate(Vector3.up * Time.deltaTime * rotationSpeed * rotationDirection);
     }
 }

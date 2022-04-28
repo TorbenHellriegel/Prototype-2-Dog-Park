@@ -6,16 +6,10 @@ public class DestroyOutOfBoundsBone : MonoBehaviour
 {
     private float destructionBoundaryFrontZ = 23.0f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
-        // Destroy objects out of screen
+        // Destroy objects out of bounds
         if(transform.position.z > destructionBoundaryFrontZ)
         {
             Destroy(gameObject);

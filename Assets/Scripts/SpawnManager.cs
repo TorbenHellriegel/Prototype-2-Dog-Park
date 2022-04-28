@@ -14,14 +14,8 @@ public class SpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Spawn a dor running towards the player
+        // Repeatedly spawns a dog running towards the player
         InvokeRepeating("SpawnRandomAnimal", startDelay, spawnInterval);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     // Spawns a random dog

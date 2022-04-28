@@ -18,15 +18,21 @@ public class GameOverScript : MonoBehaviour
         "The small dogs don't eat the entire steak. With clever planning and positioning you can feed more than one dog with a single steak."
         };
 
+    // When setup is called activate the gameover screen
     public void Setup(float score)
     {
         gameObject.SetActive(true);
+
+        // Set the text for the final score and select 2 random hints to display
         scoreText.text = "Final Score: " + score;
         hint1.text = "Random hint 1: " + hints[Random.Range(0, hints.Length)];
         hint2.text = "Random hint 2: " + hints[Random.Range(0, hints.Length)];
+
+        // Stop the game from running in the background
         Time.timeScale = 0;
     }
 
+    // Allow time to run again and reload the first scene restarting the game
     public void RestartButton()
     {
         Time.timeScale = 1;

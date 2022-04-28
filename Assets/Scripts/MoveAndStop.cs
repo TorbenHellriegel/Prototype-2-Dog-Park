@@ -16,12 +16,13 @@ public class MoveAndStop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Move the steak forward for only a short amount of time
         if(destroiTimer > 6.5)
         {
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
         }
 
-        // Destroi the steak after a certain amount of time
+        // Destroy the steak after a certain amount of time
         destroiTimer -= Time.deltaTime;
         if(destroiTimer < 0)
         {

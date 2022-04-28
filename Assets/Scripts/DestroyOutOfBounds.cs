@@ -11,12 +11,14 @@ public class DestroyOutOfBounds : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Get access to the score manager in order to lose life when the dog passes the player
         scoreManager = GameObject.Find("Score_manager").GetComponent<ScoreManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        // If the dog passes the player lose life and destroy game object
         if(transform.position.z < destructionBoundaryBackZ)
         {
             scoreManager.LoseLife();

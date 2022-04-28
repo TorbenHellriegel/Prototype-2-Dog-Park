@@ -19,40 +19,34 @@ public class ScoreManager : MonoBehaviour
         DisplayLivesScore();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    // Lose life and display the new lives and score
     public void LoseLife()
     {
         lives --;
         DisplayLivesScore();
+
+        // Call the game over screen when life reaches 0
         if(lives <= 0)
         {
             gameOverScreen.Setup(score);
         }
     }
 
+    // Reset the score to 0 and lives to 3
     public void resetScore()
     {
         lives = 3;
         score = 0;
     }
     
-    public void GainLife()
-    {
-        lives ++;
-        DisplayLivesScore();
-    }
-    
+    // Increase the score and display the new score and life
     public void IncreaseScore()
     {
         score += 100;
         DisplayLivesScore();
     }
 
+    // Display the score and life
     void DisplayLivesScore()
     {
         scoreText.text = "Score: " + score;

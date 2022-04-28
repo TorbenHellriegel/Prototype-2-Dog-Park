@@ -92,6 +92,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        // If the player collides with a cow restore a steak
         if(other.name == "Animal_Cow_White(Clone)")
         {
             if(numOfSteaks < 5)
@@ -124,6 +125,7 @@ public class PlayerController : MonoBehaviour
             default:
                 break;
         }
+        
         Instantiate(projectilePrefabSteak, transform.position, projectilePrefabSteak.transform.rotation);
         numOfSteaks = numOfSteaks - 1;
     }

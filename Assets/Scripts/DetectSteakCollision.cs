@@ -4,17 +4,7 @@ using UnityEngine;
 
 public class DetectSteakCollision : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    // When colliding with a dog destroy the steak unless the dog is a beagle then shrink it
     private void OnTriggerEnter(Collider other)
     {
         if(other.name == "Dog_Beagle_01(Clone)")

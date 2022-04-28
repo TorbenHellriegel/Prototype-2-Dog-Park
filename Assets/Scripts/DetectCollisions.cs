@@ -12,15 +12,10 @@ public class DetectCollisions : MonoBehaviour
     public int dogHealth;
     public HealthbarSlider healthSlider;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
+        // Constantly counts down a timer and turns the dog around to run back towards the player when the timer reaches 0
         turnAroundTimer -= Time.deltaTime;
         if(turnAroundTimer <= 0)
         {
@@ -30,18 +25,18 @@ public class DetectCollisions : MonoBehaviour
         {
             transform.rotation = forwardDirecton;
         }
-
-        //healthSlider.transform.position = transform.position + Vector3.up * 5;
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        // If the bone hits the dog reset the timer so he turns around
         if(other.name == "Food_Bone(Clone)")
         {
             turnAroundTimer = 3;
         }
         else if(other.name == "Food_Steak(Clone)")
         {
+            // If the steak hits the dog increase the dogs healthbar slider and destroy the gameobject when its full
             dogHealth ++;
             healthSlider.GainHealth(2/dogSize);
             if(dogHealth == dogSize)
